@@ -1,0 +1,82 @@
+%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Second order consensus}
+\vskip 0.5cm
+Tanking into account the second order vehicle dynamics modelled by:
+ 
+{\textcolor{green!40!black}{\fontsize{13}{15}
+$$ \dot{\xi_i} = \zeta_i $$
+$$ \dot{\zeta_i} = u_i $$
+}}
+with:
+{\textcolor{green!40!black}{\fontsize{13}{15}
+$$u_i = -\sum_{j=1}^{n} {g_{ij} k_{ij} [(\xi_i - \xi_j)+ \gamma (\zeta_i - 	\zeta_j)]} , \quad i \in I $$
+}}
+\vskip 0.2cm
+where $k_{ij}$ and $g_{ij}$ are defined as before and $\gamma$ is a scaling factor. 
+\vskip 0.2cm
+The {\textcolor{green!40!black}{\fontsize{13}{15}\textbf{positions}}} of the robots are described by $\xi_i$s, 
+while $\zeta_i$s describe the {\textcolor{green!40!black}{\fontsize{13}{15}\textbf{velocities}}}. 
+In this context $u_i$s are the {\textcolor{green!40!black}{\fontsize{13}{15}\textbf{accelerations}}}.
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Second order consensus, matrix representation}
+\vskip 0.5cm
+Let $\xi = [ \xi_1,\xi_2,...,\xi_n]^{T}$ and $\zeta = [\zeta_1,\zeta_2,...,\zeta_n]^{T}$. If we want to write in matrix notation the previous relations, we obtain:
+\vskip 0.3cm
+$$
+\begin{bmatrix}\dot{\xi} \\[0.5em] \dot{\zeta}\end{bmatrix} =
+\Gamma
+\begin{bmatrix} \xi \\[0.5em] \zeta \end{bmatrix}
+$$ 
+where:
+$$
+\Gamma = \begin{bmatrix}
+					0_{n \times n} & I_n \\[0.5em] 
+					-L       &        - \gamma L 
+		\end{bmatrix}
+$$
+\vskip 0.3cm
+$L$ is the Laplacian matrix, $0_{n \times n}$ is a matrix of all  $0$s and $I_n$ is the identity matrix.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Convergence analysis, time invariant topology}
+\vskip 0.5cm
+The convergence is determined by the eigenvalues of $\Gamma$. So we solve the following equation:
+\vskip 0.3cm
+$$
+det(\lambda I_{2n} - \Gamma) = det \left(
+							\begin{bmatrix}
+								\lambda I_n & - I_n \\[0.5em]
+								L  &  \lambda I_n + \gamma L\\
+							\end{bmatrix}
+							\right)
+							= det(\lambda^2 I_{n} + ( 1 +\gamma \lambda) L)
+$$
+With solution:
+$$
+\lambda_{i\pm} = \frac{\gamma \mu_i \pm \sqrt{\gamma^2\mu_{i}^2 + 4 \mu_i}}{2}
+$$
+\vskip 0.3cm
+Where $\lambda_{i+}$ and $\lambda_{i-}$ are called eigenvalues of $\Gamma$ associated with $\mu_i$.
+We can note that if $\mu_i = 0$ then $\lambda_{i\pm} = 0$.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Convergence analysis, time invariant topology}
+\vskip 0.5cm
+\begin{block}{}
+The proposed consensus protocol achieves \textbf{consensus asymptotically} if and only if matrix $\Gamma$
+has \textbf{exactly two zero eigenvalues} and all the \textbf{other eigenvalues have negative real parts}.
+\end{block}
+\vskip 0.7cm
+If all non-zero eigenvalues of  $-L$ are real and therefore negative, 
+it is straightforward to verify that all non-zero eigenvalues of $\Gamma$ have negative real parts. 
+\vskip 0.7cm
+In the general case, some non-zero eigenvalues of $\Gamma$ 
+may have positive real parts even if all non-zero eigenvalues of  $-L$ 
+have negative real parts as shown in the following examples.
+
+\end{frame}

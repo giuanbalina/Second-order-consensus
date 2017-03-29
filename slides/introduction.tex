@@ -1,0 +1,35 @@
+%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Introduction}
+\vskip 0.3cm
+The paper proposes a {\textcolor{green!40!black}{\fontsize{13}{15}\textbf{second order consensus}}} for mobile robots, such that some information states converge to a consistent value (e.g. position of the formation centre) while others converge to another consistent value (e.g. velocity of the formation centre) 
+\vskip 0.3cm
+The mobile robots communicate each others exchanging {\textcolor{green!40!black}{\fontsize{13}{15}\textbf{direct information}}}. It is a general assumption because the robots in the formation can be heterogeneous.
+
+\vskip 0.3cm
+The main aspect of the analysis are:
+\begin{itemize}
+  \item Robot positions
+  \item Robot velocities
+  \item Dynamic graph of the information flow
+\end{itemize}
+
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{First order consensus}
+\vskip 0.5cm
+The first order consensus so far proposed in the literature is the following:
+{\textcolor{green!40!black}{\fontsize{13}{15}
+$$ \dot{\xi_i} = u_i $$
+}}
+with:
+{\textcolor{green!40!black}{\fontsize{13}{15}
+$$u_i = -\sum_{j=1}^{n} {g_{ij} k_{ij} (\xi_i - \xi_j)} , \quad i \in I $$
+}}
+\vskip 0.2cm
+where $k_{ij} > 0$ and $g_{ij} = 1$ iff information flows from vehicle $i$ to vehicle $j$, and zero otherwise.
+\vskip 0.2cm
+The value of $k_{ij}$ is defined by the topology and it is given by the relation: $a_{ij} = k_{ij} g_{ij}$, $\forall i \neq j$ where $a_{ij}$ is an element of the adjacency matrix $A$.
+
+\end{frame}

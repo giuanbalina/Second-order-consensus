@@ -1,0 +1,85 @@
+\documentclass{beamer}
+
+\mode<presentation>
+{
+  \usetheme{Boadilla}      % or try Darmstadt, Madrid, Warsaw, ...
+  \usecolortheme{default} % or try albatross, beaver, crane, ...
+  \usefonttheme{default}  % or try serif, structurebold, ...
+  %\setbeamertemplate{navigation symbols}{} %hide navigation symbols
+  \setbeamertemplate{caption}[numbered]
+} 
+
+\colorlet{beamer@blendedblue}{green!40!black}
+
+
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{pgf}
+\usepackage{hyperref}
+\usepackage{url}
+
+\titlegraphic{\includegraphics[height=2.8cm]{images/StatesCase4B.pdf}\hspace*{0.75cm}~%
+   \includegraphics[width=2cm]{images/GraphCase4.pdf}\hspace*{0.75cm}~%
+    \includegraphics[height=2.8cm]{images/Switch3.pdf}
+}
+\title[Second order consensus]{\textbf{Second order consensus}}
+\subtitle{Distributed multi-vehicle coordinated control via local interaction}
+\author[Alex Delbono]{Alex Delbono \\ }
+\institute[Politecnico di Milano]{\href{mailto:alex.delbono@mail.polimi.it}{alex.delbono@mail.polimi.it}  
+		\newline 
+		Politecnico di Milano}
+\logo{\pgfputat{\pgfxy(0,7)}{\pgfbox[right,base]{\includegraphics[height=1.8cm]{images/logoPolimi.pdf}}}}
+\date{September 29 2016}
+
+
+
+
+\AtBeginSection[]
+{
+  \begin{frame}
+    \frametitle{Table of Contents}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%   DOCUMENT   %%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+%%%%%%   TITLE   %%%%%%%%%%%%
+\begin{frame}
+  \titlepage
+\end{frame}
+
+%%%%%% TABLE OF CONTENTS %%%%%
+\begin{frame}{Overview}
+\tableofcontents
+\end{frame}
+
+
+%%%%%% CONTENT %%%%%%%%%%
+\section{Introduction}
+\label{sec:introduction}
+\input{slides/introduction.tex}
+
+\section{Second order consensus}
+\label{sec:second_order_consensus}
+\input{slides/second_order_consensus.tex}
+
+\section{Case studies}
+\label{sec:case_studies}
+\input{slides/case_studies.tex}
+
+%%%%% BIBLIOGRAPHY %%%%%
+\input{slides/bibliography.tex}
+
+\section{Switching graph topologies}
+\label{sec:switching_graph_topologies}
+\input{slides/switching_graph_topologies.tex}
+
+%\section{Illustrative examples}
+%\label{sec:illustrative_examples}
+%\input{slides/illustrative_examples.tex}
+
+%%%%%% END %%%%%%%%%%%
+\end{document}
